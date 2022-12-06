@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { styled, theme } from '../styles';
 
 const Button = styled('button', {
-  backgroundColor: theme.colors.rocketseat,
+  backgroundColor: theme.colors.gray900,
 });
 
 export default function Home() {
