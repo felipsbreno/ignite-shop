@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Stripe from 'stripe';
 import { stripe } from '../../lib/stripe';
@@ -41,6 +41,13 @@ export default function Products({ product }: ProductProps) {
     </ProductContainer>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [{ params: { id: '' } }],
+    fallback: true,
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const productId = params?.id;
