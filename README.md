@@ -21,14 +21,14 @@ Projeto desenvolvido no Ignite na trilha de React. o Objetivo é criar um e-come
 
 ## Executanto o projeto
 
+> Primeiro faça um clone do projeto
+
 ```shell
+git clone https://github.com/felipsbreno/ignite-shop.git
+```
 
-  # primeiro faça um clone do projeto
+> Após clonas o projeto, execute o comando abaixo para instalar as dependencias
 
-  git clone https://github.com/felipsbreno/ignite-shop.git
-
-  # Após clonas o projeto, execute o comando abaixo para instalar as dependencias
-
-  npm install
-
+```shell
+npm install
 ```
