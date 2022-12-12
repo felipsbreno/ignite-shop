@@ -1,6 +1,4 @@
-<center>
-  <img src="./public/logo.svg" />
-</center>
+# Ignite Shop
 
 ## Objetivo
 
