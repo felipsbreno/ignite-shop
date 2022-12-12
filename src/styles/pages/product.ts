@@ -52,6 +52,7 @@ export const ProductDetails = styled('div', {
 
   button: {
     marginTop: 'auto',
+    marginBottom: 40,
     backgroundColor: '$green500',
     border: 0,
     color: '$white',
