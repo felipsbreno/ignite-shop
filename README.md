@@ -1,4 +1,6 @@
-<img src="./public/logo.svg" />
+<center>
+  <img src="./public/logo.svg" />
+</center>
 
 ## Objetivo
 
@@ -16,3 +18,17 @@ Projeto desenvolvido no Ignite na trilha de React. o Objetivo é criar um e-come
 - Detalhes de um produto pelo id
 - Checkout no stripe para compar do produto
 - Redireciomento, quando a compra da sucesso ou erro
+
+## Executanto o projeto
+
+```shell
+
+  # primeiro faça um clone do projeto
+
+  git clone https://github.com/felipsbreno/ignite-shop.git
+
+  # Após clonas o projeto, execute o comando abaixo para instalar as dependencias
+
+  npm install
+
+```
