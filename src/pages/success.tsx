@@ -1,17 +1,17 @@
-import { GetServerSideProps } from "next";
-import Image from "next/image";
-import Head from "next/head";
-import Link from "next/link";
-import Stripe from "stripe";
-import { stripe } from "../lib/stripe";
-import { ImageContainer, SuccessContainer } from "../styles/pages/success";
+import { GetServerSideProps } from 'next';
+import Image from 'next/image';
+import Head from 'next/head';
+import Link from 'next/link';
+import Stripe from 'stripe';
+import { stripe } from '../lib/stripe';
+import { ImageContainer, SuccessContainer } from '../styles/pages/success';
 
 interface SuccessProps {
   costumerName: string;
   product: {
     name: string;
     imageUrl: string;
-  }
+  };
 }
 
 export default function Success({ costumerName, product }: SuccessProps) {
@@ -19,7 +19,6 @@ export default function Success({ costumerName, product }: SuccessProps) {
     <>
       <Head>
         <title>Compra efetuada | Ignite Shop</title>
-
         <meta name="robots" content="noindex" />
       </Head>
 
@@ -31,15 +30,14 @@ export default function Success({ costumerName, product }: SuccessProps) {
         </ImageContainer>
 
         <p>
-          Uhuul <strong>{costumerName}</strong>, sua <strong>{product.name}</strong> já está a caminho da sua casa.
+          Uhuul <strong>{costumerName}</strong>, sua{' '}
+          <strong>{product.name}</strong> já está a caminho da sua casa.
         </p>
 
-        <Link href="/">
-          Voltar ao catálogo
-        </Link>
+        <Link href="/">Voltar ao catálogo</Link>
       </SuccessContainer>
     </>
-  )
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
@@ -48,14 +46,14 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       redirect: {
         destination: '/',
         permanent: false,
-      }
-    }
+      },
+    };
   }
 
   const sessionId = String(query.session_id);
 
   const session = await stripe.checkout.sessions.retrieve(sessionId, {
-    expand: ['line_items', 'line_items.data.price.product']
+    expand: ['line_items', 'line_items.data.price.product'],
   });
 
   const costumerName = session?.customer_details?.name;
@@ -66,8 +64,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       costumerName,
       product: {
         name: product.name,
-        imageUrl: product.images[0]
-      }
-    }
-  }
-}
+        imageUrl: product.images[0],
+      },
+    },
+  };
+};
