@@ -34,11 +34,9 @@ export default function Products({ product }: ProductProps) {
       });
 
       const { checkoutUrl } = response.data;
-
       window.location.href = checkoutUrl;
     } catch (err) {
       setIsCreatingCheckoutSession(false);
-
       alert('Falha ao redirecionar ao checkout!');
     }
   }
